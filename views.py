@@ -9,14 +9,15 @@ class TodoView:
 
     def create_widgets(self):
         self.colors = {
-            'main_bg': '#FFFFFF',
-            'top_bg': '#F7F8FA',
-            'title_text': '#2A2D34',
-            'normal_text': '#4E5969',
-            'completed_text': '#A0AABC',
-            'primary_button': '#4263FF',
-            'delete_button': '#FF6B6B',
-            'border': '#E4E7EC',
+            'main_bg': '#FCFCFC',
+            'top_bg': '#F5F1ED',
+            'title_text': '#5C5248',
+            'normal_text': '#857A6F',
+            'completed_text': '#B8AFA5',
+            'primary_button': '#A07DFF',
+            'primary_button_hover': '#8C6AF3',
+            'delete_button': '#FF9F9F',
+            'border': '#EAE5DF',
         }
 
         self.master.configure(bg=self.colors['main_bg'])
@@ -26,7 +27,7 @@ class TodoView:
 
         style = ttk.Style()
         style.configure("Primary.TButton", background=self.colors['primary_button'], foreground="white")
-        style.map("Primary.TButton", background=[("active", self.colors['primary_button'])])
+        style.map("Primary.TButton", background=[("active", self.colors['primary_button_hover'])])
 
         self.task_input = tk.Entry(self.input_frame, font=("Arial", 12), bg=self.colors['main_bg'], fg=self.colors['normal_text'],
                                    insertbackground=self.colors['normal_text'], relief=tk.FLAT, bd=0)

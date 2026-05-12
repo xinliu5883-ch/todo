@@ -79,17 +79,18 @@ class DesktopTodoApp:
     def set_theme(self, theme_name):
         if theme_name == "light":
             self.style.theme_use("clam")
-            self.style.configure("TFrame", background="#F7F8FA")
-            self.style.configure("TButton", background="#4263FF", foreground="white")
-            self.style.configure("TEntry", fieldbackground="#FFFFFF", foreground="#4E5969")
-            self.master.config(bg="#FFFFFF")
-            self.view.input_frame.config(bg="#F7F8FA")
-            self.view.action_frame.config(bg="#F7F8FA")
-            self.view.canvas.config(bg="#FFFFFF")
-            self.view.colors['main_bg'] = '#FFFFFF'
-            self.view.colors['top_bg'] = '#F7F8FA'
-            self.view.colors['normal_text'] = '#4E5969'
-            self.view.colors['completed_text'] = '#A0AABC'
+            self.style.configure("TFrame", background="#F5F1ED")
+            self.style.configure("TButton", background="#A07DFF", foreground="white")
+            self.style.configure("TEntry", fieldbackground="#FCFCFC", foreground="#857A6F")
+            self.master.config(bg="#FCFCFC")
+            self.view.input_frame.config(bg="#F5F1ED")
+            self.view.action_frame.config(bg="#F5F1ED")
+            self.view.canvas.config(bg="#FCFCFC")
+            self.view.colors['main_bg'] = '#FCFCFC'
+            self.view.colors['top_bg'] = '#F5F1ED'
+            self.view.colors['normal_text'] = '#857A6F'
+            self.view.colors['completed_text'] = '#B8AFA5'
+            self.view.colors['primary_button'] = '#A07DFF'
         elif theme_name == "dark":
             self.style.theme_use("clam")
             self.style.configure("TFrame", background="#2A2D34")
