@@ -78,24 +78,33 @@ class DesktopTodoApp:
 
     def set_theme(self, theme_name):
         if theme_name == "light":
-            self.style.theme_use("clam") # A modern-looking theme
-            self.style.configure("TFrame", background="#ADD8E6") # Light Blue
-            self.style.configure("TButton", background="#FFA07A", foreground="#191970") # Orange button, Dark Blue text
-            self.style.configure("TEntry", fieldbackground="#FFFFFF", foreground="#000000") # White entry, Black text
-            self.master.config(bg="#E0FFFF") # Light Cyan
-            self.view.input_frame.config(bg="#ADD8E6") # Light Blue
-            self.view.action_frame.config(bg="#ADD8E6") # Light Blue
-            self.view.task_list.config(bg="#FFFFFF", fg="#36454F", selectbackground="#90EE90", selectforeground="#000000") # White list, Dark Grey text, Light Green selection
+            self.style.theme_use("clam")
+            self.style.configure("TFrame", background="#F7F8FA")
+            self.style.configure("TButton", background="#4263FF", foreground="white")
+            self.style.configure("TEntry", fieldbackground="#FFFFFF", foreground="#4E5969")
+            self.master.config(bg="#FFFFFF")
+            self.view.input_frame.config(bg="#F7F8FA")
+            self.view.action_frame.config(bg="#F7F8FA")
+            self.view.canvas.config(bg="#FFFFFF")
+            self.view.colors['main_bg'] = '#FFFFFF'
+            self.view.colors['top_bg'] = '#F7F8FA'
+            self.view.colors['normal_text'] = '#4E5969'
+            self.view.colors['completed_text'] = '#A0AABC'
         elif theme_name == "dark":
             self.style.theme_use("clam")
-            self.style.configure("TFrame", background="#6A0DAD") # Dark Orchid
-            self.style.configure("TButton", background="#FFD700", foreground="#000000") # Gold button, Black text
-            self.style.configure("TEntry", fieldbackground="#36454F", foreground="#FFFFFF") # Dark Grey entry, White text
-            self.master.config(bg="#4B0082") # Indigo
-            self.view.input_frame.config(bg="#6A0DAD") # Dark Orchid
-            self.view.action_frame.config(bg="#6A0DAD") # Dark Orchid
-            self.view.task_list.config(bg="#36454F", fg="#D3D3D3", selectbackground="#008080", selectforeground="#FFFFFF") # Dark Grey list, Light Grey text, Teal selection
+            self.style.configure("TFrame", background="#2A2D34")
+            self.style.configure("TButton", background="#4263FF", foreground="white")
+            self.style.configure("TEntry", fieldbackground="#36454F", foreground="#D3D3D3")
+            self.master.config(bg="#1A1D21")
+            self.view.input_frame.config(bg="#2A2D34")
+            self.view.action_frame.config(bg="#2A2D34")
+            self.view.canvas.config(bg="#1A1D21")
+            self.view.colors['main_bg'] = '#1A1D21'
+            self.view.colors['top_bg'] = '#2A2D34'
+            self.view.colors['normal_text'] = '#D3D3D3'
+            self.view.colors['completed_text'] = '#6B7280'
         self.current_theme = theme_name
+        self.view.redraw_tasks()
 
     def toggle_theme(self):
         if self.current_theme == "light":
